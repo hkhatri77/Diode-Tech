@@ -1,0 +1,590 @@
+@import "../bower_components/normalize-css/normalize.css";
+@import "../bower_components/typeplate-starter-kit/css/typeplate.css";
+
+/**
+ * BOX-SIZING
+ */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    transition-delay: 0s;
+    transition-duration: 0.25s;
+    transition-property: opacity, transform, color, background-color, border-color, z-index, background-image;
+    transition-timing-function: ease;
+}
+
+
+/**
+ * GRIDS
+ */
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    > * {
+        flex: 1;
+        flex-basis: 100%;
+    }
+}
+
+@define-mixin grid_r $col,
+$width {
+    @media only screen and (min-width: $(width)px) {
+        .grid-$(col)-$(width) {
+            & > * {
+                flex-basis: calc(100 / $col)%;
+            }
+            @mixin-content;
+        }
+    }
+}
+
+@define-mixin grid $col {
+    .grid-$(col) {
+        & > * {
+            flex-basis: calc(100 / $col)%;
+        }
+        @mixin-content;
+    }
+}
+
+@mixin grid 2 {}
+
+@mixin grid 4 {}
+
+@mixin grid 6 {}
+
+@mixin grid_r 2,
+400 {}
+
+@mixin grid_r 2,
+800 {}
+
+@mixin grid_r 4,
+400 {}
+
+@mixin grid_r 4,
+800 {}
+
+
+/**
+ * PACE (automatic pre-loader thingy)
+ */
+
+.pace {
+    pointer-events: none;
+    user-select: none;
+    transition: all 1s ease;
+    .pace-progress {
+        background: #2299dd;
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        right: 100%;
+        width: 100%;
+        height: 2px;
+        transition: all 1s ease;
+    }
+}
+
+.pace-inactive {
+    opacity: 0;
+}
+
+.pace-active {
+    opacity: 1;
+}
+
+
+/**
+ * GENERAL
+ */
+
+img {
+    max-width: 100%;
+}
+
+
+/**
+ * YOUR CODE HERE
+ */
+
+body {
+    margin: 0px;
+}
+
+.header {
+    width: 100%;
+    height: 115px;
+    background-color: #FCFCFC;
+    border-top: 3px solid black;
+    box-shadow: 0px 1px 2px #BFBFBF;
+    position: relative;
+    min-width: 315px;
+    img {
+        margin: 21px 0px 0px 6%;
+        width: 75px;
+        float: left;
+    }
+    p {
+        float: left;
+        font-size: 38px;
+        font-family: Lucida Grande;
+        margin-top: 28px;
+        color: black;
+        text-shadow: 1px 2px 1px #C4C4C4;
+    }
+    span {
+        color: #E54C00;
+    }
+}
+
+#logo-img {
+    width: 350px;
+    margin-top: 40px;
+    margin-left: 6%;
+}
+
+html {
+    background: url(https://reynoldstraining.com/wp-content/uploads/2014/05/shutterstock_108179351.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.subheader {
+    width: 100%;
+    height: 40px;
+    background-color: #DDDDDD;
+    img {
+        display: none;
+    }
+    ul {
+        margin: 0;
+        float: left;
+        padding: 0;
+        margin-left: 6%;
+    }
+    li {
+        list-style-type: none;
+        display: inline;
+        font-family: Geneva;
+        font-size: 14px;
+    }
+    button {
+        margin: 0px;
+        background-color: #DDDDDD;
+        height: 40px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: -5px;
+        border: 0px;
+    }
+}
+
+button:hover {
+    background-color: #E54C00;
+    color: white;
+}
+
+.sm-icons {
+    float: right;
+    margin-top: 24px;
+    margin-right: 6%;
+    border-left: 2px solid #d4d4d4;
+    padding-left: 17px;
+    img {
+        width: 25px;
+        margin: 2px;
+        filter: invert(65%);
+    }
+    p {
+        font-size: 10px;
+        margin: 8px;
+        text-shadow: 0px 0px 0px;
+    }
+    div img {
+        width: 15px;
+        margin-top: 9px;
+    }
+}
+
+#left-icon {
+    margin-left: 113px;
+}
+
+.dropmenu {
+    transform: translate(289%, 172%);
+    display: block;
+    background-color: white;
+    li {
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+#body-wrapper {
+    position: absolute;
+    bottom: -1900px;
+    .headliner {
+        width: 100%;
+        background-color: #d4d4d4;
+        height: 150px;
+        position: relative;
+        opacity: .9;
+        border-bottom: 3px solid black;
+        p,
+        img {
+            float: left;
+        }
+        img {
+            filter: saturate(4);
+            margin: 40px 1% 0;
+            width: 62px;
+            transform: rotate(90deg);
+        }
+        p:nth-child(1) {
+            margin: 24px 0 0 6%;
+            font-family: Malayalam MN;
+            font-size: 36px;
+            width: 15%;
+            text-align: center;
+            line-height: 50px;
+            color: #e54c00;
+        }
+        p:nth-child(3) {
+            width: 62%;
+            margin: 28px 6% 0 0;
+            font-family: Malayalam MN;
+            font-size: 14px;
+            color: #5b5b5b;
+        }
+    }
+    .what-we-do {
+        background: linear-gradient(#FCFCFC, #EAEAEA);
+        width: 100%;
+        height: 600px;
+        position: relative;
+        padding-top: 45px;
+        #wwd-wrapper {
+            height: 100%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .services-listing {
+            width: 30%;
+            float: left;
+            margin: 40px 0px 0px 0%;
+            min-height: 396px;
+            p {
+                margin: 0px;
+                text-indent: 0px;
+                margin-top: 20px;
+                font-family: Bangla MN;
+                font-size: 15px;
+                font-style: oblique;
+                color: #9B9B9B;
+            }
+            p:last-of-type {
+                font-style: normal;
+                color: #e0703c;
+            }
+            h4 {
+                clear: both;
+                margin: 0px;
+                font-family: Arial;
+                font-weight: normal;
+                color: #474747;
+            }
+            div {
+                width: 100%;
+                min-height: 185px;
+                margin: 0px;
+                margin-bottom: 20px;
+                background-image: url(http://www.inddist.com/sites/inddist.com/files/oil-gas-industry1.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+        }
+        .services-listing:first-of-type {
+            margin-right: 5%;
+        }
+        .services-listing:last-of-type {
+            margin-left: 5%;
+        }
+        h3 {
+            text-align: center;
+            margin: 0px;
+            font-family: Arial;
+            font-weight: normal;
+        }
+    }
+    .img-grey {
+        width: 100%;
+        height: 150px;
+        background-image: url(http://itmitaliasnc.it/pages/wp-content/uploads/2014/06/industry-metal-320915.jpg);
+        background-size: cover;
+        background-position: center;
+        box-shadow: inset 0px 0px 17px #212121;
+        filter: sepia(.4);
+        background-attachment: fixed;
+        h2 {
+            color: white;
+            text-shadow: 0 0 17px black;
+            text-align: center;
+            padding: 45px;
+            font-family: Arial;
+            font-style: italic;
+            font-size: 35px;
+        }
+    }
+    .products {
+        background: linear-gradient(#FCFCFC, #EAEAEA);
+        width: 100%;
+        height: 350px;
+        border-bottom: 1px dashed grey;
+        h4 {
+            margin: 0;
+            padding-top: 40px;
+            text-align: center;
+            font-family: Arial;
+            font-weight: normal;
+        }
+        div:first-of-type {
+            ul {
+                margin: 0;
+                margin-left: 8%;
+                li {
+                    width: 27%;
+                    float: left;
+                    margin-left: 20px;
+                    list-style-type: none;
+                    margin-top: 50px;
+                    div:first-of-type {
+                        width: 45px;
+                        margin: 0;
+                        border: 1px solid white;
+                        border-radius: 50%;
+                        padding: 10px;
+                        height: 45px;
+                        background-color: #e54c00;
+                        box-shadow: 0 0 3px #9b9b9b;
+                        img {
+                            filter: invert(100%);
+                        }
+                    }
+                    div:last-of-type {
+                        float: left;
+                        margin-top: -47px;
+                        margin-left: 70px;
+                        h6 {
+                            margin: 0;
+                            color: #474747;
+                            font-family: Arial;
+                            font-weight: 400;
+                            font-size: 17px;
+                        }
+                        p {
+                            font-family: Bangla MN;
+                            font-size: 11px;
+                            color: #9B9B9B;
+                            margin-top: 5px;
+                            font-style: oblique;
+                        }
+                    }
+                }
+            }
+        }
+        div:last-of-type {
+            ul {
+                margin: 0;
+                margin-left: 8%;
+                li {
+                    width: 27%;
+                    float: left;
+                    margin-left: 20px;
+                    list-style-type: none;
+                    margin-top: 30px;
+                    div:first-of-type {
+                        width: 45px;
+                        margin: 0;
+                        border: 1px solid white;
+                        border-radius: 50%;
+                        padding: 10px;
+                        height: 45px;
+                        background-color: #e54c00;
+                        box-shadow: 0 0 3px #9b9b9b;
+                        img {
+                            filter: invert(100%);
+                        }
+                    }
+                    div:last-of-type {
+                        float: left;
+                        margin-top: -47px;
+                        margin-left: 70px;
+                        h6 {
+                            margin: 0;
+                            font-family: Arial;
+                            font-weight: 400;
+                            font-size: 17px;
+                            color: #474747;
+                        }
+                        p {
+                            font-family: Bangla MN;
+                            font-size: 11px;
+                            color: #9B9B9B;
+                            margin-top: 5px;
+                            font-style: oblique;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .testimonials {
+        background: linear-gradient(#FCFCFC, #EAEAEA);
+        width: 100%;
+        height: 350px;
+        #testimonial-wrapper {
+            margin: 0 12% 0 12%;
+        }
+        img:first-of-type {
+            margin-top: 50px;
+            width: 25px;
+            filter: invert(65%);
+        }
+        img:last-of-type {
+            float: right;
+            margin-top: -32px;
+            width: 25px;
+            filter: invert(65%);
+        }
+        p {
+            text-align: center;
+            font-family: Bangla MN;
+            span {
+                font-size: 24px;
+            }
+        }
+        p:first-of-type {
+            font-size: 15px;
+            margin: 0px 4% 0px 4%;
+            margin-top: -25px;
+            color: #9B9B9B;
+        }
+        p:last-of-type {
+            font-size: 15px;
+            font-style: italic;
+            color: #e0703c;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        #testimonial-img {
+            background-color: white;
+            width: 110px;
+            height: 110px;
+            margin: auto;
+            border: 1px solid grey;
+            border-radius: 50%;
+            background-image: url(http://cascadesdental.com/wp-content/uploads/2013/12/smiling_man_solo.png);
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    .img-blue {
+        width: 100%;
+        height: 150px;
+        background-image: url(https://daveliyanpractice.files.wordpress.com/2012/08/abstract-blue-13516.jpg);
+        background-size: cover;
+        background-position: center;
+        box-shadow: inset 0px 0px 17px #212121;
+        filter: sepia(.4);
+        background-attachment: fixed;
+        h2 {
+            color: white;
+            text-shadow: 0 0 17px black;
+            text-align: center;
+            padding: 45px;
+            font-family: Arial;
+            font-style: italic;
+            font-size: 35px;
+        }
+    }
+    .footer {
+        background-color: #424242;
+        width: 100%;
+        height: 300px;
+    }
+}
+
+#header-wrapper {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 750px) {
+    .header {
+        background-color: white;
+        height: 60px;
+        #logo-img {
+            margin: 14px 0 0 28%;
+            width: 300px;
+        }
+        #logo-p {
+            font-size: 34px;
+            margin-top: 2px;
+            margin-bottom: 0px;
+        }
+    }
+    .subheader {
+        img {
+            display: block;
+            width: 27px;
+            margin-left: 10px;
+            transform: translatey(6px);
+        }
+        ul {
+            display: none;
+        }
+    }
+    .sm-icons {
+        transform: translateY(-69%);
+        border: 0px;
+        margin-top: 31px;
+        margin-right: 11%;
+        margin-right: 10px;
+        img {
+            filter: invert(100%);
+        }
+    }
+    #contact-dets {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        #logo-img {
+            margin: 14px 0 0 16%;
+            width: 250px;
+        }
+    }
+    .headliner {
+        p:nth-child(3) {
+            width: 44%;
+            margin: 21px 6% 0 0;
+            font-family: Malayalam MN;
+            font-size: 12px;
+            color: #5b5b5b;
+        }
+        p:nth-child(1) {
+            font-size: 21px;
+            line-height: 30px;
+        }
+    }
+}
