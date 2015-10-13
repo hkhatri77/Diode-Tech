@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="services">
+<html id="services" class="services">
 
 <head>
     <title></title>
@@ -11,7 +11,7 @@
     <div class="container">
         <div id="header-wrapper">
             <div class="header">
-                <img id="logo-img" src="./images/DiodeTechLogo1.png">
+                <a href="/index.html"><img id="logo-img" src="./images/DiodeTechLogo1.png"></a>
                 <p id="logo-p"></p>
                 <div class="sm-icons">
                     <div id="contact-dets"><img src="./images/telephone46.png">
@@ -29,40 +29,65 @@
                 <img src="./images/menu48.png">
                 <ul>
                     <li>
-                        <button>
-                            <a href=""></a>ABOUT US</button>
+                        <a href="./aboutus.html">ABOUT US</a>
+                    <li>
+                        <a href="/services.html">SERVICES</a>
                     </li>
                     <li>
-                        <button>
-                            <a href="http://www.register.com/"></a>SERVICES</button>
-                        <ul class="dropmenu">
-                            <li class="dm-sub">
-                                <a href=""></a>
-                            </li>
-                            <li class="dm-sub">
-                                <a href=""></a>
-                            </li>
-                            <li class="dm-sub">
-                                <a href=""></a>
-                            </li>
-                        </ul>
+                        <a href="/products.html">PRODUCTS</a>
                     </li>
                     <li>
-                        <button>
-                            <a href=""></a>PRODUCTS</button>
+                        <a href="">YOUR INDUSTRY</a>
                     </li>
                     <li>
-                        <button>
-                            <a href=""></a>YOUR INDUSTRY</button>
-                    </li>
-                    <li>
-                        <button>
-                            <a href=""></a>CONTACT US</button>
+                        <a href="/contactus.html">CONTACT US</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="form"></div>
+        <div class="form" id="main-form">
+            <div id="contact-us">
+                <h4>Contact Us</h4></div>
+            <form>
+                <div class="input-wrapper">
+                    <div><img src="./images/user168.png">
+                        <div></div>
+                    </div>
+                    <input type="text" name="firstname" placeholder="Name">
+                </div>
+                <div class="input-wrapper">
+                    <div><img src="./images/building78.png">
+                        <div></div>
+                    </div>
+                    <input type="text" name="companyname" placeholder="Company">
+                </div>
+                <div class="input-wrapper">
+                    <div><img src="./images/telephone46.png">
+                        <div></div>
+                    </div>
+                    <input type="phone" name="phonenumber" placeholder="Phone Number">
+                </div>
+                <div class="input-wrapper">
+                    <div><img src="./images/mail59.png">
+                        <div></div>
+                    </div>
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+                <div id="select">
+                    <select>
+                        <option>Select Inquiry Interest</option>
+                        <option>Services</option>
+                        <option>Products</option>
+                        <option>I'm a supplier</option>
+                    </select>
+                </div>
+                <textarea rows="3"></textarea>
+                <p>Thank you for contacting us!</p>
+                <div id="submit">
+                    <input type="submit" name="submit" placeholder="Submit">
+                </div>
+            </form>
+        </div>
         <div class="services-wrapper">
             <div>
                 <h3>Our Services</h3>
@@ -73,19 +98,65 @@
                     <div><img src="./images/cargo-ship.png"></div>
                     <h5>Import - Export</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="/import-export.html">Read More</a>
                 </div>
                 <div class="services-det">
                     <div><img src="./images/agreement2.png"></div>
                     <h5>Consulting</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="/consulting.html">Read More</a>
                 </div>
                 <div class="services-det">
                     <div><img src="./images/settings10.png"></div>
                     <h5>Product Sourcing</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="/productsourcing.html">Read More</a>
                 </div>
             </div>
         </div>
+        <div class="sub-scroll">
+            <img src="./images/down119.png">
+            <div></div>
+            <div>
+                <h4>Our Services</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+                    <div class="footer">
+                <div id="footer-wrapper">
+                    <div class="contact-info-footer">
+                        <p>Get in touch</p>
+                        <p>8901 Marmor Road</p>
+                        <p>Washington, DC 77354</p>
+                        <p>Telephone: +1 800 859-7717</p>
+                        <p>Fax: +1 800 123-9989</p>
+                        <p>Email: contact@diodetech.com</p>
+                    </div>
+                    <div class="footer-menu">
+                        <a href="">Home</a>
+                        <a href="">About Us</a>
+                        <a href="">Services</a>
+                        <a href="">Products</a>
+                        <a href="">Your Industry</a>
+                        <a href="">Contact Us</a>
+                    </div>
+                    <div class="social-media-footer">
+                        <p>Follow us</p>
+                        <div class="footer-sm-icons">
+                            <img id="left-icon" src="./images/facebook2.png">
+                            <img src="./images/google-plus.png">
+                            <img src="./images/twitter.png">
+                            <img src="./images/linkedin1.png">
+                            <img src="./images/email131.png">
+                        </div>
+                    </div>
+                    <div class="newsletter-footer">
+                        <p>Join our newsletter</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                        <button>SIGN UP</button>
+                    </div>
+                </div>
+            </div>
     </div>
     <script type="text/javascript" src="./app-browserify.js"></script>
 </body>
